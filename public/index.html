@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 	<title>Bootstrap Example</title>
+ 	<meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	 <link rel="stylesheet" type="text/css" href="./main.css">
+	 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	 <script type="text/javascript" src="slide_bar_data.json"></script>
+	 <script type="text/javascript" src="community.js"></script>
+	 <script type="text/javascript" src="index.js"></script>
+	 <script type="text/javascript" src="blog.js"></script>
+	 <script type="text/javascript" src="aboutus.js"></script>
+	 <script type="text/javascript" src="routing.js"></script>
+	 
+	 
+</head>
+<body>
+		
+<main>
+	<div class="frame" id="frame">
+		<div class="contents">
+				<nav class="navbar navbar-expand-lg navbar-light bgcolor">
+						<a class="navbar-brand" href="#"><img src="logo.png" width="82" height="86" title="logo" alt="logo"></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+							<div class="navbar-nav" id="nav_items">
+									<!--<a class="nav-item link nav-link active" name="/" href="./index.html">Find Pomah <span class="sr-only">(current)</span><span class="something"></span></a>
+									<a class="nav-item link nav-link" name="/community" href="./community.html">Community <span class="something"></span></a>
+									<a class="nav-item link nav-link" name="/blog" href="./blog.html">Blog<span class="something"></span></a>
+									<a class="nav-item link nav-link" name="/about" href="./aboutpomah.html">About Pomah<span class="something"></span></a>-->
+								<a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+							</div>
+							
+						</div>
+						<button type="button" class="btn btn-light nav_btn_log">Login</button>
+							<button type="button" class="btn btn-secondary nav_btn" style="float:right">Register</button>
+				</nav>
+				<div class="content" id="content">
+					
+						
+				</div>
+				
+		</div>
+	</div>
+</main>
+
+
+
+<script>
+var request = new XMLHttpRequest();
+   request.open("GET", "test.json", false);
+   request.send(null)
+   var json = JSON.parse(request.responseText);
+for(l = 0; l < json["nav"].length;l++){
+	var node = document.createElement("a");
+  var textnode = document.createTextNode(json["nav"][l]["name"]);
+  var span = document.createElement("span");
+ span.className="something";
+  node.className="nav-item link nav-link";
+  if(json["nav"][l]["link"] === window.location.pathname) node.className+=" active";
+
+  node.href=json["nav"][l]["link"];
+  node.name=json["nav"][l]["link"];
+  node.appendChild(textnode);
+  node.appendChild(span);
+  document.getElementById("nav_items").appendChild(node);
+}
+    
+
+		//Disable bootsrap navbar
+	$( "a" ).click(function(e) { // target any selector
+  			e.preventDefault();
+		});
+
+		
+
+   function navinject() {
+  var node = document.createElement("a");
+  var textnode = document.createTextNode("Test");
+  node.appendChild(textnode);
+  document.getElementById("nav_items").appendChild(node);
+}
+
+		</script>
+		<!--<script type="text/javascript" src="slideshow.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	   
+	  
+</body>
+</html>
+
