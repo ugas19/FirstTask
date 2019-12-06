@@ -1,0 +1,30 @@
+{
+  "nav": [
+    {
+      "link": "/",
+      "name": "Find Pomah",
+      "content": "homePage"
+
+    },
+    {
+        "link": "/community",
+        "name": "Community",
+        "content": "community"
+    },
+    {
+        "link": "/blog",
+        "name": "Blog",
+        "content": "blog"
+    },
+    {
+        "link": "/about",
+        "name": "About Pomah",
+        "content": "contact"
+    },
+    {
+        "link": "/test",
+        "name": "Test",
+        "content": "test"
+    }
+  ]
+}
